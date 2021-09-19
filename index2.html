@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="btn-info p-2">Converter App</h2>
+    <textarea name="" id="numb" cols="30" rows="10" class="form-control mt-3" placeholder="Inputkan Biner Code ASCII Atau Text"></textarea><br>
+    <button type="button" onclick="toBinary()" class="btn btn-primary">Biner</button>
+    <button type="button" onclick="toText()" class="btn btn-danger">Text</button>
+    <p id="demo" class="form-control mt-3">Result </p>
+  </div>
+
+<script>
+  
+function toBinary() {
+  var i=0,j,text="",X=[""];
+
+  // Get the value of the input field with id="numb"
+  X = document.getElementById("numb").value;
+
+  for(i;i<X.length;i++){
+    text += X.charCodeAt(i).toString(2) + " ";
+  }
+ 
+  document.getElementById("demo").innerHTML =  text + " " ;
+  console.log(text);
+  
+}
+
+function toText(){
+
+  var i=0,j,text=[""],X=[],Y=[]; 
+
+  X = document.getElementById("numb").value;
+  var bin = X.split(" ");
+
+  for(i;i<bin.length;i++){
+    Y.push(String.fromCharCode(parseInt(bin[i], 2)));
+  }
+
+  for (a=0;a<Y.length;a++){
+    text += Y[a] ;
+  }
+  document.getElementById("demo").innerHTML =  text + " " ;
+  console.log(text);
+}
+
+
+</script>
+</body>
+</html>

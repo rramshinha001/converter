@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="btn-info p-2 align-center">Converter App</h2>
+      <div class="text-center">
+        <a class="btn btn-info p-1" href="index.html">HOME </a>
+      </div>
+      <textarea
+        name=""
+        id="numb"
+        cols="30"
+        rows="10"
+        class="form-control mt-3"
+        placeholder="Inputkan Tulisan"
+      ></textarea
+      ><br />
+      <button type="button" onclick="myFunction()" class="btn btn-success">
+        Ubah
+      </button>
+      <p id="demo" class="form-control mt-3">Biner</p>
+    </div>
+
+    <script>
+      function myFunction() {
+        var i = 0,
+          j,
+          text = "",
+          X = [""],
+          Y = [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z",
+          ];
+        Z = [
+          "z",
+          "y",
+          "x",
+          "w",
+          "v",
+          "u",
+          "t",
+          "s",
+          "r",
+          "q",
+          "p",
+          "o",
+          "n",
+          "m",
+          "l",
+          "k",
+          "j",
+          "i",
+          "h",
+          "g",
+          "f",
+          "e",
+          "d",
+          "c",
+          "b",
+          "a",
+        ];
+
+        // Get the value of the input field with id="numb"
+        X = document.getElementById("numb").value;
+
+        for (i; i < X.length; i++) {
+          for (j = 0; j <= Y.length; j++) {
+            if (X[i] == Y[j]) {
+              text += Z[j];
+            }
+          }
+        }
+        document.getElementById("demo").innerHTML = text + " ";
+        console.log(text);
+      }
+    </script>
+  </body>
+</html>
